@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Physical and biomedical constants
-g = 9.81  # Gravitational acceleration in m/s^2
+g = 9.81  # Gravitational acceleration in m/s²
 rho_blood = 1060  # Blood density in kg/m³
 viscosity_blood_normal = 0.0035  # Normal blood viscosity in Pa·s
 normal_hematocrit = 0.45  # Normal hematocrit (45%)
@@ -108,7 +108,7 @@ def generate_synthetic_blood_flow_data(n_samples=15000, vessel_type='artery', pa
     plt.xlabel('Flow (m³/s)')
     plt.ylabel('Frequency')
     plt.grid(True)
-    plt.show()  # Muestra el gráfico y espera a que se cierre
+    plt.show()
 
     # Visualize vessel diameter distribution
     plt.figure(figsize=(12, 6))
@@ -117,7 +117,7 @@ def generate_synthetic_blood_flow_data(n_samples=15000, vessel_type='artery', pa
     plt.xlabel('Diameter (m)')
     plt.ylabel('Frequency')
     plt.grid(True)
-    plt.show()  # Muestra el gráfico y espera a que se cierre
+    plt.show()
 
     # Visualize relationship between heart rate and flow
     plt.figure(figsize=(12, 6))
@@ -126,7 +126,7 @@ def generate_synthetic_blood_flow_data(n_samples=15000, vessel_type='artery', pa
     plt.xlabel('Heart Rate (beats/min)')
     plt.ylabel('Flow (m³/s)')
     plt.grid(True)
-    plt.show()  # Muestra el gráfico y espera a que se cierre
+    plt.show()
 
     # Visualize relationship between hematocrit and viscosity
     plt.figure(figsize=(12, 6))
@@ -135,7 +135,7 @@ def generate_synthetic_blood_flow_data(n_samples=15000, vessel_type='artery', pa
     plt.xlabel('Hematocrit')
     plt.ylabel('Viscosity (Pa·s)')
     plt.grid(True)
-    plt.show()  # Muestra el gráfico y espera a que se cierre
+    plt.show()
 
     # Create correlation heatmap
     correlation_matrix = df.corr()
@@ -143,27 +143,27 @@ def generate_synthetic_blood_flow_data(n_samples=15000, vessel_type='artery', pa
     heatmap = sns.heatmap(correlation_matrix, annot=True, fmt=".2f", cmap="YlGnBu", square=True)
     plt.title('Correlation Heatmap between Variables')
 
-    # Rotar etiquetas de los ejes x e y
+    # Rotate x and y axis labels
     heatmap.set_xticklabels(heatmap.get_xticklabels(), rotation=25, horizontalalignment='right', fontsize=10)
     heatmap.set_yticklabels(heatmap.get_yticklabels(), rotation=0, fontsize=10)
 
-    plt.show()  # Muestra el gráfico y espera a que se cierre
+    plt.show()
 
     # Statistical analysis of the data
     stats_summary = df.describe()
 
     # Create graphical table of the statistical analysis
-    plt.figure(figsize=(14, 10))  # Aumenta el tamaño de la figura
+    plt.figure(figsize=(14, 10))  # Increase figure size
     stats_heatmap = sns.heatmap(stats_summary, annot=True, fmt=".2f", cmap="YlGnBu", cbar=True, square=True)
-    plt.title('Statistical Analysis of the Data', fontsize=16)  # Aumenta el tamaño de la fuente del título
-    plt.xlabel('Variables', fontsize=12)  # Aumenta el tamaño de la fuente de las etiquetas
-    plt.ylabel('Statistics', fontsize=12)  # Aumenta el tamaño de la fuente de las etiquetas
+    plt.title('Statistical Analysis of the Data', fontsize=16)  # Increase font size for the title
+    plt.xlabel('Variables', fontsize=12)  # Increase font size for labels
+    plt.ylabel('Statistics', fontsize=12)  # Increase font size for labels
 
-    # Rotar etiquetas de los ejes x e y en el análisis estadístico
+    # Rotate x and y axis labels in the statistical analysis
     stats_heatmap.set_xticklabels(stats_heatmap.get_xticklabels(), rotation=45, horizontalalignment='right', fontsize=10)
     stats_heatmap.set_yticklabels(stats_heatmap.get_yticklabels(), rotation=0, fontsize=10)
 
-    plt.show()  # Muestra el gráfico y espera a que se cierre
+    plt.show()
 
 if __name__ == "__main__":
     # Call the function to generate synthetic blood flow data
